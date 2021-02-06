@@ -26,7 +26,7 @@ mkdir %1 && cd %1 && mkdir js && mkdir style && (
     echo  "scripts": {
     echo    "start": "browser-sync start --server --files 'style/*.css', '*.html', 'js/*.js' --port=5300 --no-notify",
     echo    "build": "docker build -t %1 .",
-    echo    "container": "docker run --name %1 -d -p 80:80 %1"
+    echo    "container": "docker run --name %1-container -d -p 80:80 %1"
     echo  },
     echo  "keywords": [],
     echo  "author": "",
@@ -35,12 +35,18 @@ mkdir %1 && cd %1 && mkdir js && mkdir style && (
     echo    "browser-sync": "^2.26.14"
     echo  }
     echo }
-)>package.json && echo "/node_modules" > .dockerignore && (
+)>package.json && echo /node_modules > .dockerignore && (
     echo FROM node:15.8.0-alpine as build
+    echo.
     echo WORKDIR /.
+    echo.
     echo COPY package.json /.
+    echo.
     echo RUN npm install
+    echo.
     echo COPY . .
+    echo.
     echo FROM httpd:2.4
+    echo.
     echo COPY --from=build ./ /usr/local/apache2/htdocs/
 ) > Dockerfile && git init && echo node_modules > .gitignore && code . && browser-sync start --server --files 'style/*.css', '*.html', 'js/*.js' --port=5300 --no-notify
