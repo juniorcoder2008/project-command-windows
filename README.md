@@ -11,3 +11,10 @@ should open. There you can drag n drop the ```cmd-file```.
 ## Use the Command
 After this, you should be able to type in every folder in the cmd ```create-project coolProject```. If this works, happy birthday, now you can save time, cause you shouldn´t
 create a working-directory for web-apps one more time!
+
+In the ```package.json``` there are some commands:  
+  - start: to start a live server with Browsersync
+  - build: to build a docker image
+  - container: to create a docker-container from a docker-image
+  
+The Docker-Image and the Docker-Container will be called like the project.
