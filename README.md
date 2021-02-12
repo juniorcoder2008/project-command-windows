@@ -1,7 +1,7 @@
 # Project Command
 
 ## Requirements
-This is a Command, to create a basic __Web-App__. It uses [Git](https://git-scm.com/) and [Docker](https://www.docker.com/), so make sure you have it installed on your machine.
+This is a Command, to create a basic __Web-App__. It uses [Git](https://git-scm.com/), so make sure you have it installed on your machine.
 
 If you have installed the command, make sure you have installed [NodeJs](https://nodejs.org/en/). If you are not sure, open your console and type in:  
 ```node -v``` or ```npm -v```. Now press win+r, so now a new little window should open. Type in: ```%appdata%/npm``` and enter. The __npm__ folder  
